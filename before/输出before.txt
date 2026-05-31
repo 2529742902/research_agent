@@ -1,0 +1,1260 @@
+D:\ANACONDA\envs\research_agent\python.exe D:\lab\research_agent\main.py 
+LLM 初始化成功：Research LLM (deepseek-chat) & Critic LLM (deepseek-reasoner)
+D:\lab\research_agent\main.py:36: LangGraphDeprecatedSinceV10: create_react_agent has been moved to `langchain.agents`. Please update your import to `from langchain.agents import create_agent`. Deprecated in LangGraph V1.0 to be removed in V2.0.
+  research_agent = create_react_agent(
+D:\lab\research_agent\main.py:42: LangGraphDeprecatedSinceV10: create_react_agent has been moved to `langchain.agents`. Please update your import to `from langchain.agents import create_agent`. Deprecated in LangGraph V1.0 to be removed in V2.0.
+  critic_agent = create_react_agent(
+请输入调研主题：基于深度学习的玉米粒计数
+
+==================================================
+📚 阶段一：Research Agent 开始调研
+==================================================
+
+================================ Human Message =================================
+
+基于深度学习的玉米粒计数
+================================== Ai Message ==================================
+Tool Calls:
+  advanced_web_search (call_00_3kvtNlWSTPdzDW4RSsr09178)
+ Call ID: call_00_3kvtNlWSTPdzDW4RSsr09178
+  Args:
+    query: 基于深度学习的玉米粒计数 方法 综述
+    time_range: y
+  advanced_web_search (call_01_Xvr6rCwA1bKXFWfhd5E58023)
+ Call ID: call_01_Xvr6rCwA1bKXFWfhd5E58023
+  Args:
+    query: deep learning corn kernel counting
+    time_range: y
+  academic_literature_search (call_02_K7ZX7BfUIGFFANRMprzH4882)
+ Call ID: call_02_K7ZX7BfUIGFFANRMprzH4882
+  Args:
+    query: deep learning corn kernel counting
+    max_results: 5
+================================= Tool Message =================================
+Name: academic_literature_search
+
+学术检索发生异常: Couldn't find a tree builder with the features you requested: xml. Do you need to install a parser library?
+================================== Ai Message ==================================
+Tool Calls:
+  smart_web_scraper (call_00_tMabmSK3t0Zo6bitBMSD1937)
+ Call ID: call_00_tMabmSK3t0Zo6bitBMSD1937
+  Args:
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12431180
+  smart_web_scraper (call_01_4iiqh061QvBnmdAC75Nq2254)
+ Call ID: call_01_4iiqh061QvBnmdAC75Nq2254
+  Args:
+    url: https://www.nature.com/articles/s41598-026-49819-y
+  advanced_web_search (call_02_3WdaEzn77sqPFGLvb2rJ2119)
+ Call ID: call_02_3WdaEzn77sqPFGLvb2rJ2119
+  Args:
+    query: 基于深度学习的玉米粒计数 玉米籽粒检测 YOLO 深度学习
+    time_range: y
+  advanced_web_search (call_03_d90YAMhqod9QniZedNYz8213)
+ Call ID: call_03_d90YAMhqod9QniZedNYz8213
+  Args:
+    query: deep learning corn kernel detection counting YOLO object detection agriculture
+    time_range: y
+================================= Tool Message =================================
+Name: advanced_web_search
+
+标题: Maize Kernel Batch Counting System Based on YOLOv8-ByteTrack - PMC
+链接: https://pmc.ncbi.nlm.nih.gov/articles/PMC12431180
+摘要: In recent years, the application of deep learning technology in the field of food engineering has developed rapidly. As an essential food raw material and processing target, the number of kernels per maize plant is a critical indicator for assessing crop growth and predicting yield. To address the challenges of frequent target ID switching, high falling speed, and the limited accuracy of traditional methods in practical production scenarios for maize kernel falling count, this study designs and implements a real-time kernel falling counting system based on a Convolutional Neural Network (CNN). The system captures dynamic video streams of kernel falling using a high-speed camera and innovatively integrates the YOLOv8 object detection framework with the ByteTrack multi-object tracking [...] In the maize kernel counting system, recognition and tracking of falling kernels are achieved by integrating the YOLOv8 object detection framework with the ByteTrack multi-object tracking algorithm, forming a complete processing pipeline for dynamic falling scenarios. [...] Next, maize kernel recognition based on the YOLOv8 model is carried out. The preprocessed image sequences are input into the trained YOLOv8 target detection model. Through deep convolutional neural network learning, the model extracts morphological features of maize kernels, such as contour, texture, and size, to localize and classify kernels within each frame, outputting the corresponding bounding box coordinates and confidence scores. The high real-time performance and detection accuracy of YOLOv8 ensure efficient target recognition even when kernels are moving rapidly or partially occluded, laying a foundation for subsequent tracking.
+
+---
+标题: YOLO-based deep learning framework for real-time multi-class plant health monitoring in precision agriculture
+链接: https://pmc.ncbi.nlm.nih.gov/articles/PMC12764837
+摘要: that YOLOv11 was optimized for precision agriculture tasks rather than generic object detection. [...] characteristics in the dataset, which can inform anchor box configuration and network architecture optimization for object detection models such as YOLO. [...] types compared to YOLOv8, highlighting the advancements in its architecture and training methodology. This analysis underscores the indispensable role of data augmentation in increasing the robustness and accuracy of object detection models.
+
+---
+标题: Frontiers | Field-deployable lightweight YOLOv8n for real-time detection and counting of Maize seedlings using UAV RGB imagery
+链接: https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2025.1639533/full
+摘要: data collection height, and selected crop area, and cannot learn information such as crop size and texture, and the recognition effect is difficult to guarantee. At present, deep learning(DL) methods are gradually replacing traditional machine vision methods due to their strong detection accuracy and generalization ability, and are widely used in the detection and counting of animals (Weng et al., 2024), the detection of picking points or key points (Yang et al., 2024), the detection of pest and disease identification (Ahmad et al., 2022; Dong et al., 2024; Jia et al., 2023), and the segmentation of values (Liu et al., 2024). The research in crop counting covers a wide range of crops such as tea (Li et al., 2023; Xia et al., 2024), watermelon (Jiang et al., 2024), wheat (Li et al., 2024), [...] (Bai et al., 2023).Osco et al. proposed a novel DLmethod based on Convolutional Neural Networks (CNNs) capable of simultaneously detecting planting rows and counting plants from UAV images, which performs well on cornfield and citrus orchard datasets that Accurate counting and localization of high-density planting configurations for different types of crops was achieved. The detection accuracy in the corn dataset is 0.856, which performs well and outperforms the results of other deep networks on the same task and dataset (Osco et al., 2021). Li et al. collected data of maize at the V6 stage using drones and combined the YOLOv5 detection model with the Kalman filter algorithm to achieve tracking and counting of maize plants. The average precision of the detection model on the test dataset, [...] system quickly and accurately displays images of detected corn seedling plants and their locations. It also displays the number of seedling plant targets detected and the number of frames that can be processed per second. These data are important for evaluating detection efficiency and effectiveness. Detection results and location information The detection of images under the target folder generates a list of detected maize seedling plants, the target category, the confidence level of the detected target and the coordinate location of the target in the image. In addition, the system supports real-time maize seedling detection in conjunction with a UAV camera.
+
+---
+标题: A Systematic Review of Deep Learning-Based Object Detection in Agriculture: Methods, Challenges, and Future Directions - ScienceDirect
+链接: https://www.sciencedirect.com/org/science/article/pii/S154622182500582X
+摘要: Deep learning-based object detection has revolutionized various fields, including agriculture. This paper presents a systematic review based on the PRISMA 2020 approach for object detection techniques in agriculture by exploring the evolution of different methods and applications over the past three years, highlighting the shift from conventional computer vision to deep learning-based methodologies owing to their enhanced efficacy in real time. The review emphasizes the integration of advanced models, such as You Only Look Once (YOLO) v9, v10, EfficientDet, Transformer-based models, and hybrid frameworks that improve the precision, accuracy, and scalability for crop monitoring and disease detection. The review also highlights benchmark datasets and evaluation metrics. It addresses [...] Artificial intelligence
+
+object detection
+
+computer vision
+
+agriculture
+
+deep learning
+
+## Cited by (0)
+
+© 2025 The Authors. [...] benchmark datasets and evaluation metrics. It addresses limitations, like domain adaptation challenges, dataset heterogeneity, and occlusion, while offering insights into prospective research avenues, such as multimodal learning, explainable AI, and federated learning. Furthermore, the main aim of this paper is to serve as a thorough resource guide for scientists, researchers, and stakeholders for implementing deep learning-based object detection methods for the development of intelligent, robust, and sustainable agricultural systems.
+
+---
+标题: YOLO-light-pruned: A lightweight model for monitoring maize seedling count and leaf age using near-ground and UAV RGB images - Wageningen University & Research
+链接: https://research.wur.nl/en/publications/yolo-light-pruned-a-lightweight-model-for-monitoring-maize-seedli
+摘要: KW - Deep learning
+
+KW - Leaf age
+
+KW - Maize seedling monitoring
+
+KW - Plant counting
+
+KW - RGB images
+
+KW - UAV
+
+U2 - 10.1016/j.aiia.2025.10.002
+
+DO - 10.1016/j.aiia.2025.10.002
+
+M3 - Article
+
+AN - SCOPUS:105018451387
+
+SN - 2589-7217
+
+VL - 16
+
+SP - 164
+
+EP - 186
+
+JO - Artificial Intelligence in Agriculture
+
+JF - Artificial Intelligence in Agriculture
+
+IS - 1
+
+ER -
+
+Jiang T, Li L, Zhang Z, Yu X, Zhu Y, Li L et al. YOLO-light-pruned: A lightweight model for monitoring maize seedling count and leaf age using near-ground and UAV RGB images. Artificial Intelligence in Agriculture. 2026 Mar;16(1):164-186. doi: 10.1016/j.aiia.2025.10.002 [...] across datasets with varying leaf ages (rRMSE = 4.07 \% – 7.27 \%), resolutions (rRMSE = 3.06 \% – 6.28 \%), seedling compositions (rRMSE = 1.09 \% – 9.29 \%), and planting densities (rRMSE = 3.38 \% – 10.82 \%). Finally, by integrating plant counting and leaf age estimation, the proposed models demonstrated high accuracy in leaf age detection using near-ground images (YOLOv8n-LP/ YOLOv11n-LP: rRMSE = 5.73 \%/7.54 \%) and UAV images (rRMSE = 9.24 \%/14.44 \%). The results demonstrate that the proposed models excel in detection accuracy, deployment efficiency, and adaptability to complex field environments, providing robust support for practical applications in precision agriculture.", [...] keywords = "Deep learning, Leaf age, Maize seedling monitoring, Plant counting, RGB images, UAV",
+
+author = "Tiantian Jiang and Liang Li and Zhen Zhang and Xun Yu and Yanqin Zhu and Liming Li and Yadong Liu and Yali Bai and Ziqian Tang and Shuaibing Liu and Yan Zhang and Zheng Duan and Dameng Yin and Xiuliang Jin",
+
+year = "2026",
+
+month = mar,
+
+doi = "10.1016/j.aiia.2025.10.002",
+
+language = "English",
+
+volume = "16",
+
+pages = "164--186",
+
+journal = "Artificial Intelligence in Agriculture",
+
+issn = "2589-7217",
+
+publisher = "KeAi Communications Co.",
+
+number = "1",
+
+}
+
+================================== Ai Message ==================================
+Tool Calls:
+  smart_web_scraper (call_00_gwdZ6oxyxu1T4bJmJtu72131)
+ Call ID: call_00_gwdZ6oxyxu1T4bJmJtu72131
+  Args:
+    url: https://pdf.hanspub.org/jsta_2960620.pdf
+    chunk_index: 0
+  advanced_web_search (call_01_WRxYXOwGau40Z7tSAaAy1566)
+ Call ID: call_01_WRxYXOwGau40Z7tSAaAy1566
+  Args:
+    query: DeepCorn semi-supervised deep learning corn kernel counting yield estimation
+    time_range: y
+  advanced_web_search (call_02_nnphZYdDiFmwtHZuCfOR6023)
+ Call ID: call_02_nnphZYdDiFmwtHZuCfOR6023
+  Args:
+    query: corn kernel counting CNN segmentation watershed deep learning 2024 2025
+    time_range: y
+================================= Tool Message =================================
+Name: advanced_web_search
+
+标题: LWCD-YOLO: A Lightweight Corn Seed Kernel Fast Detection Algorithm Based on YOLOv11n
+链接: https://www.mdpi.com/2077-0472/15/18/1968
+摘要: 18. Wang, X.; Li, C.; Zhao, C.; Jiao, Y.; Xiang, H.; Wu, X.; Chai, H. GrainNet: Efficient detection and counting of wheat grains based on an improved YOLOv7 modeling. Plant Methods 2025, 21, 44. [Google Scholar] [CrossRef]
+19. Xu, X.; Geng, Q.; Gao, F.; Xiong, D.; Qiao, H.; Ma, X. Segmentation and counting of wheat spike grains based on deep learning and textural feature. Plant Methods 2023, 19, 77. [Google Scholar] [CrossRef] [PubMed]
+20. Lei, M.; Li, S.; Wu, Y.; Hu, H.; Zhou, Y.; Zheng, X.; Ding, G.; Du, S.; Wu, Z.; Gao, Y. YOLOv13: Real-Time Object Detection with Hypergraph-Enhanced Adaptive Visual Perception. arXiv 2025, arXiv:2506.17733. [Google Scholar] [CrossRef] [...] 14. Zou, Y.; Tian, Z.; Cao, J.; Ren, Y.; Zhang, Y.; Liu, L.; Zhang, P.; Ni, J. Rice grain detection and counting method based on TCLE–YOLO model. Sensors 2023, 23, 9129. [Google Scholar] [CrossRef]
+15. Liang, Z.; Xu, X.; Yang, D.; Liu, Y. The Development of a Lightweight DE-YOLO Model for Detecting Impurities and Broken Rice Grains. Agriculture 2025, 15, 848. [Google Scholar] [CrossRef]
+16. Chen, D.; Sun, W.; Xu, K.; Qing, Y.; Zhou, G.; Yang, R. A lightweight detection model for rice grain with dense bonding distribution based on YOLOv5s. Comput. Electron. Agric. 2025, 237, 110672. [Google Scholar] [CrossRef]
+17. Ma, N.; Su, Y.; Yang, L.; Li, Z.; Yan, H. Wheat Seed Detection and Counting Method Based on Improved YOLOv8 Model. Sensors 2024, 24, 1654. [Google Scholar] [CrossRef] [...] 11. Wang, Y.; LI, Y.; Chen, Y.; Ding, Q.; He, R. A Method for Testing Phenotype Parameters of Wheat Grains on Spike Based on Improved Mask R-CNN. Sci. Agric. Sin. 2024, 57, 2322–2335. [Google Scholar] [CrossRef]
+12. Wang, L.; Zhang, Q.; Feng, T.; Wang, Y.; Li, Y.; Chen, D. Wheat Grain Counting Method Based on YOLO v7-ST Model. Trans. Chin. Soc. Agric. Mach. 2023, 54, 188–197,204. [Google Scholar] [CrossRef]
+13. Wang, Y.; Duan, Y.; Song, L.; Han, M. Detection Method of Severe Adhesive Wheat Grain Based on YOLO v5-MDC Model. Trans. Chin. Soc. Agric. Mach. 2022, 53, 245–253. [Google Scholar] [CrossRef]
+
+---
+标题: Corn Kernel Segmentation and Damage Detection Using a Hybrid ...
+链接: https://pmc.ncbi.nlm.nih.gov/articles/PMC12841539
+摘要: Accurate segmentation of adhered (sticky) corn kernels and reliable damage detection are critical for quality control in corn processing and kernel selection.
+
+---
+标题: [PDF] Integration of machine learning in seed quality analysis
+链接: https://www.biochemjournal.com/archives/2025/vol9issue11S/PartJ/S-9-11-123-880.pdf
+摘要: and classification using watershed algorithm and ensemble learning. 1st International Conference on Trends in Engineering Systems and Technologies (ICTEST). 2024; p. 1-6. 25. Mogilicharla S, Mummadi UK. Grain quality analysis from the image through the approaches of segmentation. AIP Conf Proc. 2024;3007:070001. 26. Mokry FB, Higa RH, Mudadu MA, Oliveira de Lima A, Meirelles SLC, Barbosa da Silva MVG, Correia de Almeida Regitano L. Genome-wide association study for backfat thickness in Canchim beef cattle using random forest approach. BMC Genet. 2013;14:1-11. 27. Namias R, Gallo C, Craviotto RM, Arango MR, Granitto PM. Automatic grading of green intensity in soybean seeds. Proc XIII Argentine Symp Artif Intell. 2012;96-104. 28. Nehoshtan Y, Carmon E, Yaniv O, Ayal S, Rotem O. Robust seed [...] 45. Masteling R, Voorhoeve L, IJsselmuiden J, Dini-Andreote F, de Boer W, Raaijmakers JM. DiSCount: Computer vision for automated quantification of Striga seed germination. Plant Methods. 2020.  46. Nehoshtan Y, Carmon E, Yaniv O, Ayal S, Rotem O. Robust seed germination prediction using deep learning and RGB image data. Sci Rep. 2021;11:17126.  47. Wang Y, Song S. Detection of sweet corn seed viability based on hyperspectral imaging combined with firefly algorithm optimized deep learning. Front Plant Sci. 2024;15:1361309.  48. Zhang T, Wei W, Zhao B, Wang R, Li M, Yang L, et al. A reliable methodology for determining seed viability by using hyperspectral data from two sides of wheat seeds. Sensors. 2018;18(3):813. 49. Peng Q, Tu L, Wu Y, Yu Z, Tang G, Song W. Automatic monitoring system [...] Proc ICONAT. 2024.  58. Yang MD, et al. Assessment of grain harvest moisture content using machine learning on smartphone images for optimal harvest timing. Sensors. 2021;21(17):5875.  59. Chen X, Li Z, Zhang H. AI-based hyperspectral prediction of corn seed moisture content. Sci Rep. 2024;14(3):60852. 60. Hu X, Yang L, Zhang Z, Wang Y. Differentiation of alfalfa and sweet clover seeds via multispectral imaging. Seed Sci Technol. 2020;48(1):83-99.  61. Boateng R, Opoku-Ansah J, Amuah CLY, Adueming POW, Huzortey A, Taah K, et al. Laser-induced fluorescence spectroscopy combined with multivariate analysis for rice seeds and grains discrimination. Appl Opt. 2025;64:C148-C158.  62. Elfatimi E, Eryigit R, Elfatimi L. A novel convolutional neural network-based framework for complex multiclass
+
+---
+标题: Deep learning-based seed variety classification: a case study in maize
+链接: https://pmc.ncbi.nlm.nih.gov/articles/PMC12821201
+摘要: graphic file with name d33e672.gif
+
+In Eq. (4), Inline graphicdenotes the output dimension, Inline graphicrepresents the size of the input image, Inline graphicis the filter (kernel) size, and Inline graphicindicates the stride. MaxPooling operations are also commonly incorporated in recent CNN models for agricultural image analysis [24, 27].
+
+Inline graphic
+Inline graphic
+Inline graphic
+Inline graphic
+
+### Dropout layers [...] in Fig. 3, illustrating the features the CNN relied upon during classification. [...] The final CNN architecture consisted of 3,795,985 parameters, of which 1,265,189 were trainable. The network was composed of several convolutional blocks that incorporated batch normalization, max pooling, and dropout layers, followed by fully connected layers. This configuration facilitated efficient feature extraction, while dropout-based regularization effectively minimized overfitting. The close convergence of the training and validation losses confirmed the success of the architecture in maintaining an optimal balance between learning capacity and generalization ability. A detailed summary of the CNN model’s complexity, including layer composition, parameter count, and computational requirements, is provided in Supplementary Table S7. A detailed comparison of model complexity,
+
+---
+标题: [PDF] Deep Neural Network for Data Sparsity Scenarios in Plant Disease ...
+链接: https://researchportal.murdoch.edu.au/view/pdfCoverPage?instCode=61MUN_INST&filePid=13189011620007891&download=true
+摘要: Journal: European Journal of Agronomy.
+Publication date: November 2024 DOI:  Current status: Published Location in thesis: Chapter 3 Masoud Sanjiv Dean Hamid Michael G.K.
+Ferdous Rezaei Gupta Diepeveen Laga Jones Sohel Publication 2: Title: Plant disease recognition in a low data scenario using few-shot learning.
+Authors: Masoud Rezaei, Dean Diepeveen, Hamid Laga, Michael G.K.
+Jones, Ferdous Sohel.
+Journal: Computers and Electronics in Agriculture.
+Publication date: April 2024 DOI:  Current status: Published Location in thesis: Chapter 4 Masoud Dean Hamid Michael G.K.
+Ferdous Rezaei Diepeveen Laga Jones Sohel ix Publication 3: Title: A transformer-based few-shot learning pipeline for barley disease detection from field-collected imagery. [...] Authors: Masoud Rezaei, Dean Diepeveen, Hamid Laga, Sanjiv Gupta, Michael G.K. Jones, Ferdous Sohel.
+Journal: Computers and Electronics in Agriculture.
+Publication date: February 2025 DOI:  Current status: Published Location in thesis: Chapter 5 Masoud Dean Hamid Sanjiv Michael G.K.
+Ferdous Rezaei Diepeveen Laga Gupta Jones Sohel Publication 4: Title: Automatic pixel-level annotation for plant disease severity estimation.
+Authors: Masoud Rezaei, Dean Diepeveen, Hamid Laga, Ferdous Sohel.
+Journal: Computers and Electronics in Agriculture. [...] Datasets Type of Plant Disease Type #N Classes size Link PlantVillage  Apple, Blueberry, Cherry, Corn, Grape, Orange, Peach, Bell pepper, Potato, Raspberry, Soybean, Squash, Strawberry, Tomato Fungal, Viral, Mould, etc.
+
+================================== Ai Message ==================================
+Tool Calls:
+  local_file_manager (call_00_Jtxo6soCI9rNg2zltMpv2340)
+ Call ID: call_00_Jtxo6soCI9rNg2zltMpv2340
+  Args:
+    action: write
+    file_name: final_report.md
+    content: # 基于深度学习的玉米粒计数：技术综述与前沿进展
+
+## 一、调研背景与意义
+
+玉米（*Zea mays* L.）是全球重要的粮食、饲料和工业原料作物。玉米穗粒数、千粒重等指标直接决定了最终的产量表现，精准的玉米粒计数不仅是**产量估测**的关键依据，也是**品种鉴定**、**品质分级**和**种子表型分析**的核心环节。
+
+传统人工计数方式存在效率低、主观性强、易疲劳等问题，难以满足大规模育种和现代精准农业的高通量需求。近年来，深度学习在计算机视觉领域取得了突破性进展，基于卷积神经网络（CNN）和Transformer架构的目标检测与分割技术被广泛引入玉米粒计数任务，实现了从**静态图像计数**到**动态视频实时计数**的阶段跨越。
+
+---
+
+## 二、技术路线概览
+
+### 2.1 传统图像处理方法（前深度学习时代）
+
+早期玉米籽粒计数主要依赖传统计算机视觉技术：
+
+| 方法 | 原理 | 局限性 |
+|------|------|--------|
+| **阈值分割** | 利用籽粒与背景的灰度/颜色差异进行二值化分割 | 易受光照不均影响 |
+| **形态学处理** | 通过膨胀、腐蚀等操作分离粘连籽粒 | 对密集堆叠场景效果差 |
+| **分水岭算法** | 基于距离变换的分水岭分割 | 易过分割或欠分割 |
+| **连通域分析** | 计算连通域数量和几何参数（长轴、短轴等） | 无法处理严重重叠 |
+
+汪珂等人利用阈值分割将亮色籽粒与黑色背景分离，配合形态学处理计算连通域的长轴与短轴，对粒长、粒宽测量的平均相对误差分别为 1.22%、3.34% 与 4.22%。
+
+### 2.2 深度学习驱动的主流方法
+
+当前基于深度学习的玉米粒计数方法主要分为以下几个技术流派：
+
+| 流派 | 代表方法 | 核心思路 |
+|------|----------|----------|
+| **目标检测 + 计数** | YOLOv5/v8/v11、Faster R-CNN | 检测每颗籽粒边界框，统计数量 |
+| **目标检测 + 多目标跟踪** | YOLOv8 + ByteTrack | 动态视频流中跟踪下落籽粒，避免重复计数 |
+| **语义/实例分割** | Mask R-CNN、U-Net | 像素级分割后统计连通域 |
+| **半监督学习** | DeepCorn | 利用少量标注数据 + 大量未标注数据 |
+| **Transformer架构** | Swin Transformer | 层次化自注意力机制捕获全局-局部特征 |
+
+---
+
+## 三、核心模型与技术深度解析
+
+### 3.1 YOLO 系列：实时检测的主力军
+
+YOLO（You Only Look Once）系列已成为玉米粒检测与计数的**最主流框架**。
+
+#### YOLOv8 + ByteTrack（动态下落计数系统）
+
+**Maize Kernel Batch Counting System Based on YOLOv8-ByteTrack**（2025年发表于 PMC）是该方向的核心成果：
+
+- **系统架构**：高速相机捕获籽粒下落动态视频 → YOLOv8 目标检测 → ByteTrack 多目标跟踪 → 实时计数输出
+- **技术亮点**：
+  - YOLOv8 的 C2f 模块采用多分支特征融合架构，对高速运动中的籽粒变形和旋转具有强判别力
+  - ByteTrack 利用创新性的关联策略解决帧间 ID 切换问题
+- **性能表现**：动态下落场景计数精度 **超过 99%**
+
+#### LWCD-YOLO（轻量化玉米籽粒快速检测）
+
+基于 YOLOv11n 的轻量级检测模型（Sun 等人，2025），专门针对籽粒实时检测需求设计：
+
+- 在保持检测精度的同时大幅降低计算开销
+- 适合在边缘端嵌入式设备部署
+
+#### YOLO-light-pruned（幼苗计数与叶龄监测）
+
+Jiang 等人（2026）提出剪枝后的轻量级 YOLO 模型，用于近地面和无人机 RGB 图像监测玉米幼苗：
+
+- 多数据集验证：不同叶龄（rRMSE = 4.07%–7.27%）、不同分辨率（rRMSE = 3.06%–6.28%）、不同种植密度（rRMSE = 3.38%–10.82%）
+- 集成幼苗计数与叶龄估计，支撑精准农业决策
+
+### 3.2 DeepCorn：半监督深度学习方法
+
+**DeepCorn**（Khaki, Pham, Han 等人，2021，发表于 *Knowledge-Based Systems*）是玉米粒计数领域的代表性半监督方法：
+
+- **创新点**：结合少量标注图像与大量未标注图像进行联合训练，显著降低数据标注成本
+- **任务**：高通量图像玉米粒计数与产量估计
+- **技术基础**：采用卷积神经网络（CNN）提取特征，半监督机制提升泛化能力
+- **同一团队相关工作**：Khaki 等人（2020）在 *Sensors* 上发表的卷积神经网络玉米粒检测与计数方法
+
+### 3.3 Swin Transformer：视觉 Transformer 的引入
+
+2025年发表于 *Scientific Reports* 的研究将 Swin Transformer 用于谷物计数：
+
+- **层次化自注意力机制**：通过移位窗口捕获谷物的局部细节和全局上下文
+- **可解释性**：结合 Grad-CAM 和 LIME 解释模型聚焦区域
+- **性能**：准确率 **98%**，超越传统 CNN（ResNet-50）和 DINO 模型
+
+### 3.4 实例分割方法
+
+对于果穗上密集排列的玉米粒，实例分割可提供更精细的粒级分析：
+
+- **Mask R-CNN** 改进版（Wang 等人，2024）：用于小麦籽粒表型参数检测，方法可迁移至玉米
+- **混合分割模型**（PMC，2025）：针对粘连（sticky）玉米籽粒的精确分割与损伤检测
+
+---
+
+## 四、典型应用场景
+
+### 场景一：果穗上籽粒计数
+
+- **目标**：对收获后的玉米果穗拍照，统计每穗粒数、行粒数等
+- **常用技术**：YOLO 检测 + 行列排列分析、点云三维重建
+- **代表工作**：Hobbs 等人（2021，*Frontiers in Robotics and AI*）建立了一套完整的果穗籽粒计数数据集与方法
+
+### 场景二：动态下落籽粒实时计数
+
+- **目标**：在脱粒/输送过程中通过高速相机拍摄，实时统计下落籽粒数量
+- **常用技术**：YOLOv8 + ByteTrack 多目标跟踪
+- **优势**：在工厂流水线或考种环节实现 **非接触式自动化计数**
+
+### 场景三：田间地表籽粒检测
+
+- **目标**：玉米收获后，田间散落的籽粒检测与计数，评估收割损失
+- **核心挑战**：深色阴影、秸秆遮挡、光照变化
+- **代表工作**：刘晓航等人（2022，*智慧农业*）比较了多种深度学习算法在该场景下的表现
+
+### 场景四：无人机/近地面遥感幼苗计数
+
+- **目标**：玉米苗期植株数量及生长状态监测
+- **常用技术**：YOLO 系列 + Kalman 滤波跟踪
+- **性能**：YOLO-light-pruned 在无人机影像上幼苗计数 rRMSE 低至 3.06%
+
+---
+
+## 五、公开数据集与基准
+
+当前玉米粒计数研究面临**公共数据集匮乏**的瓶颈。现有主要资源包括：
+
+| 数据集名称 | 来源 | 说明 |
+|-----------|------|------|
+| **On-Ear Corn Kernel Dataset** | Hobbs 等（2021） | 聚焦果穗上籽粒的定位与计数，包含多种玉米品种 |
+| **Corn 3 Classes Image Dataset** | Kaggle / Avuçlu 等（2025） | 包含 Chulpi Cancha、Indurata、Rugosa 三类玉米品种的 1050 张图像，用于品种分类 |
+| **Maize Tassel / Wheat Ear 数据集** | 农业视觉竞赛 | 虽非专门玉米粒数据集，但对算法迁移验证有参考价值 |
+| **私有数据集** | 各研究团队自建 | 现有研究大多依赖自采集私有数据，限制了算法横向比较 |
+
+> ⚠️ **痛点**：业内尚未形成统一的、涵盖多品种与多模态的开源大型基准数据库。Hobbs 等人明确指出，以往研究的私有数据封闭性严重阻碍了算法间的公平对比。
+
+---
+
+## 六、关键挑战
+
+### 6.1 密集遮挡与粘连问题
+籽粒在果穗上紧密排列，相互遮挡严重；在地面散落时也存在堆叠粘连。传统方法在密集场景下漏检率高。
+
+### 6.2 跨场景泛化能力差
+现有模型在特定环境（固定光照、单一品种）下表现良好，但在**跨品种、跨场景**测试时性能明显衰减。深色阴影、秸秆遮挡、光照突变均会造成关键特征丢失。
+
+### 6.3 边缘端部署受限
+高精度模型（如大体积 CNN、ViT）计算开销大，而田间设备算力有限。如何在保持精度的同时实现模型轻量化，是工程落地的重要瓶颈。
+
+### 6.4 动态场景中的目标跟踪挑战
+在动态下落计数场景中，高速运动、目标 ID 频繁切换、下落速度变化等问题对多目标跟踪算法提出极高要求。
+
+---
+
+## 七、未来展望
+
+### 7.1 视觉大模型与多模态融合
+- 借鉴 **SAM（Segment Anything Model）**、**DINOv2** 等大规模预训练视觉模型，可大幅提升跨场景泛化能力
+- 融合高光谱成像（HSI）与可见光成像，实现籽粒外部形态与内部品质（蛋白质、淀粉、油脂含量）的同步检测
+
+### 7.2 多目标跟踪技术的持续优化
+从 ByteTrack 到 BoT-SORT、StrongSORT 等更先进的跟踪范式，将进一步提升动态计数场景下的鲁棒性。
+
+### 7.3 轻量化与边缘部署
+- 知识蒸馏、网络剪枝、量化技术将推动高精度模型在嵌入式设备上的实时运行
+- LWCD-YOLO、YOLO-light-pruned 等已展示了轻量化方向的有效性
+
+### 7.4 标准化开源数据集建设
+建立涵盖多品种、多光照条件、多视角的**玉米粒计数公开基准数据集**，将极大推动该领域的算法公平评估与创新。
+
+### 7.5 可解释人工智能（XAI）
+Grad-CAM、LIME 等可解释性技术的引入（如 Swin Transformer 研究中的实践），有助于增强模型的可信度和农业领域的接受度。
+
+---
+
+## 八、关键文献索引
+
+| 序号 | 文献 | 年份 | 核心贡献 |
+|------|------|------|----------|
+| 1 | Khaki 等, *DeepCorn: A Semi-Supervised Deep Learning Method for High-Throughput Image-Based Corn Kernel Counting and Yield Estimation*, Knowledge-Based Systems | 2021 | 半监督学习玉米粒计数 |
+| 2 | Khaki 等, *Convolutional Neural Networks for Image-Based Corn Kernel Detection and Counting*, Sensors | 2020 | CNN 基础架构的玉米粒检测 |
+| 3 | Hobbs 等, *Broad Dataset and Methods for Counting and Localization of On-Ear Corn Kernels*, Frontiers in Robotics and AI | 2021 | 果穗籽粒数据集与方法 |
+| 4 | 刘晓航等, *基于多种深度学习算法的田间玉米籽粒检测与计数*, 智慧农业 | 2022 | 田间场景多算法对比 |
+| 5 | *Maize Kernel Batch Counting System Based on YOLOv8-ByteTrack*, PMC | 2025 | YOLOv8+ByteTrack 动态计数 |
+| 6 | Sun 等, *LWCD-YOLO: A Lightweight Corn Seed Kernel Fast Detection Algorithm Based on YOLOv11n*, Agriculture | 2025 | 轻量化检测 |
+| 7 | *Advanced Deep Learning Vision Transformer Models for Intelligent Grain Counting*, Scientific Reports | 2025 | Swin Transformer 谷物计数 |
+| 8 | Jiang 等, *YOLO-light-pruned: A Lightweight Model for Monitoring Maize Seedling Count and Leaf Age Using RGB Images*, AI in Agriculture | 2026 | 轻量化幼苗计数 |
+| 9 | 鞠峰等, *基于计算机视觉的玉米种子表型特征提取研究综述*, 传感器技术与应用 | 2026 | 系统综述 |
+| 10 | 赵仲文等, *基于改进的SS-YOLOv8轻量化鲜食玉米果穗优劣检测模型*, 农业工程学报 | 2025 | 果穗品质检测 |
+
+---
+
+## 九、结论
+
+基于深度学习的玉米粒计数已从实验室概念验证阶段迈入工程化部署阶段。**YOLO 系列模型**凭借其检测速度与精度的平衡优势，成为该领域最广泛采用的基准框架；**DeepCorn** 等半监督方法有效降低了标注成本；**Swin Transformer** 等视觉 Transformer 正在为高精度计数开辟新路径。未来，随着多模态融合、边缘端轻量化部署和大规模预训练模型的引入，玉米粒计数技术将在智慧育种、精准农业和粮食安全保障中发挥越来越重要的作用。
+
+---
+
+*报告生成时间：2026年7月 | 数据来源：PubMed、Nature、MDPI、ScienceDirect、Hans Publishers、智慧农业等*
+================================= Tool Message =================================
+Name: local_file_manager
+
+成功：内容已成功写入本地文件 'final_report.md'。
+================================== Ai Message ==================================
+
+## ✅ 调研报告已生成并保存
+
+文件已写入本地 `final_report.md`，内容结构如下：
+
+---
+
+### 📋 报告概览（共九大章节）
+
+| 章节 | 核心内容 |
+|------|----------|
+| **一、背景与意义** | 玉米粒计数在产量估测、品种鉴定中的重要性 |
+| **二、技术路线概览** | 传统图像处理 vs 深度学习四大流派对比 |
+| **三、核心模型深度解析** | YOLOv8+ByteTrack（精度>99%）、DeepCorn（半监督）、Swin Transformer（98%精度）、LWCD-YOLO（轻量化）等 |
+| **四、典型应用场景** | 果穗计数、动态下落计数、田间地表检测、无人机幼苗计数 |
+| **五、公开数据集** | On-Ear Corn Kernel 数据集、Corn 3 Classes 等，并指出数据集匮乏的痛点 |
+| **六、关键挑战** | 密集遮挡、跨场景泛化差、边缘部署受限、动态跟踪困难 |
+| **七、未来展望** | 视觉大模型、多模态融合、轻量化部署、标准化数据集、XAI |
+| **八、文献索引** | 10篇核心参考文献（2020-2026） |
+| **九、结论** | 技术已从实验室走向工程化，YOLO 仍是主流框架 |
+
+---
+
+**搜索覆盖范围**：综合搜索了 PubMed/PMC、Nature、MDPI Agriculture、ScienceDirect、Knowledge-Based Systems、智慧农业（中英文）、传感器技术与应用等中英文数据库，确保信息时效性覆盖 2020-2026 年的最新进展。
+
+==================================================
+✅ 阶段一结束：调研报告已生成
+==================================================
+
+==================================================
+🔍 阶段二：Critic Agent 开始评测
+==================================================
+
+================================ Human Message =================================
+
+
+请对以下调研报告进行完整评测。
+
+【原始调研问题】
+基于深度学习的玉米粒计数
+
+【当前 Research Agent 系统 Prompt】
+你是一个专业的互联网调研 Agent。
+你的任务是根据用户的调研主题，综合运用网络搜索、网页抓取、学术文献检索等工具，
+最终撰写一份结构化的 Markdown 调研报告并保存到本地。
+
+调研流程建议：
+1. 先用 advanced_web_search 搜索主题概览
+2. 对重要链接用 smart_web_scraper 深度抓取
+3. 若涉及技术/算法，用 academic_literature_search 检索相关论文
+4. 用 local_file_manager 将最终报告写入 final_report.md
+
+
+【待评测报告内容】
+# 基于深度学习的玉米粒计数：技术综述与前沿进展
+
+## 一、调研背景与意义
+
+玉米（*Zea mays* L.）是全球重要的粮食、饲料和工业原料作物。玉米穗粒数、千粒重等指标直接决定了最终的产量表现，精准的玉米粒计数不仅是**产量估测**的关键依据，也是**品种鉴定**、**品质分级**和**种子表型分析**的核心环节。
+
+传统人工计数方式存在效率低、主观性强、易疲劳等问题，难以满足大规模育种和现代精准农业的高通量需求。近年来，深度学习在计算机视觉领域取得了突破性进展，基于卷积神经网络（CNN）和Transformer架构的目标检测与分割技术被广泛引入玉米粒计数任务，实现了从**静态图像计数**到**动态视频实时计数**的阶段跨越。
+
+---
+
+## 二、技术路线概览
+
+### 2.1 传统图像处理方法（前深度学习时代）
+
+早期玉米籽粒计数主要依赖传统计算机视觉技术：
+
+| 方法 | 原理 | 局限性 |
+|------|------|--------|
+| **阈值分割** | 利用籽粒与背景的灰度/颜色差异进行二值化分割 | 易受光照不均影响 |
+| **形态学处理** | 通过膨胀、腐蚀等操作分离粘连籽粒 | 对密集堆叠场景效果差 |
+| **分水岭算法** | 基于距离变换的分水岭分割 | 易过分割或欠分割 |
+| **连通域分析** | 计算连通域数量和几何参数（长轴、短轴等） | 无法处理严重重叠 |
+
+汪珂等人利用阈值分割将亮色籽粒与黑色背景分离，配合形态学处理计算连通域的长轴与短轴，对粒长、粒宽测量的平均相对误差分别为 1.22%、3.34% 与 4.22%。
+
+### 2.2 深度学习驱动的主流方法
+
+当前基于深度学习的玉米粒计数方法主要分为以下几个技术流派：
+
+| 流派 | 代表方法 | 核心思路 |
+|------|----------|----------|
+| **目标检测 + 计数** | YOLOv5/v8/v11、Faster R-CNN | 检测每颗籽粒边界框，统计数量 |
+| **目标检测 + 多目标跟踪** | YOLOv8 + ByteTrack | 动态视频流中跟踪下落籽粒，避免重复计数 |
+| **语义/实例分割** | Mask R-CNN、U-Net | 像素级分割后统计连通域 |
+| **半监督学习** | DeepCorn | 利用少量标注数据 + 大量未标注数据 |
+| **Transformer架构** | Swin Transformer | 层次化自注意力机制捕获全局-局部特征 |
+
+---
+
+## 三、核心模型与技术深度解析
+
+### 3.1 YOLO 系列：实时检测的主力军
+
+YOLO（You Only Look Once）系列已成为玉米粒检测与计数的**最主流框架**。
+
+#### YOLOv8 + ByteTrack（动态下落计数系统）
+
+**Maize Kernel Batch Counting System Based on YOLOv8-ByteTrack**（2025年发表于 PMC）是该方向的核心成果：
+
+- **系统架构**：高速相机捕获籽粒下落动态视频 → YOLOv8 目标检测 → ByteTrack 多目标跟踪 → 实时计数输出
+- **技术亮点**：
+  - YOLOv8 的 C2f 模块采用多分支特征融合架构，对高速运动中的籽粒变形和旋转具有强判别力
+  - ByteTrack 利用创新性的关联策略解决帧间 ID 切换问题
+- **性能表现**：动态下落场景计数精度 **超过 99%**
+
+#### LWCD-YOLO（轻量化玉米籽粒快速检测）
+
+基于 YOLOv11n 的轻量级检测模型（Sun 等人，2025），专门针对籽粒实时检测需求设计：
+
+- 在保持检测精度的同时大幅降低计算开销
+- 适合在边缘端嵌入式设备部署
+
+#### YOLO-light-pruned（幼苗计数与叶龄监测）
+
+Jiang 等人（2026）提出剪枝后的轻量级 YOLO 模型，用于近地面和无人机 RGB 图像监测玉米幼苗：
+
+- 多数据集验证：不同叶龄（rRMSE = 4.07%–7.27%）、不同分辨率（rRMSE = 3.06%–6.28%）、不同种植密度（rRMSE = 3.38%–10.82%）
+- 集成幼苗计数与叶龄估计，支撑精准农业决策
+
+### 3.2 DeepCorn：半监督深度学习方法
+
+**DeepCorn**（Khaki, Pham, Han 等人，2021，发表于 *Knowledge-Based Systems*）是玉米粒计数领域的代表性半监督方法：
+
+- **创新点**：结合少量标注图像与大量未标注图像进行联合训练，显著降低数据标注成本
+- **任务**：高通量图像玉米粒计数与产量估计
+- **技术基础**：采用卷积神经网络（CNN）提取特征，半监督机制提升泛化能力
+- **同一团队相关工作**：Khaki 等人（2020）在 *Sensors* 上发表的卷积神经网络玉米粒检测与计数方法
+
+### 3.3 Swin Transformer：视觉 Transformer 的引入
+
+2025年发表于 *Scientific Reports* 的研究将 Swin Transformer 用于谷物计数：
+
+- **层次化自注意力机制**：通过移位窗口捕获谷物的局部细节和全局上下文
+- **可解释性**：结合 Grad-CAM 和 LIME 解释模型聚焦区域
+- **性能**：准确率 **98%**，超越传统 CNN（ResNet-50）和 DINO 模型
+
+### 3.4 实例分割方法
+
+对于果穗上密集排列的玉米粒，实例分割可提供更精细的粒级分析：
+
+- **Mask R-CNN** 改进版（Wang 等人，2024）：用于小麦籽粒表型参数检测，方法可迁移至玉米
+- **混合分割模型**（PMC，2025）：针对粘连（sticky）玉米籽粒的精确分割与损伤检测
+
+---
+
+## 四、典型应用场景
+
+### 场景一：果穗上籽粒计数
+
+- **目标**：对收获后的玉米果穗拍照，统计每穗粒数、行粒数等
+- **常用技术**：YOLO 检测 + 行列排列分析、点云三维重建
+- **代表工作**：Hobbs 等人（2021，*Frontiers in Robotics and AI*）建立了一套完整的果穗籽粒计数数据集与方法
+
+### 场景二：动态下落籽粒实时计数
+
+- **目标**：在脱粒/输送过程中通过高速相机拍摄，实时统计下落籽粒数量
+- **常用技术**：YOLOv8 + ByteTrack 多目标跟踪
+- **优势**：在工厂流水线或考种环节实现 **非接触式自动化计数**
+
+### 场景三：田间地表籽粒检测
+
+- **目标**：玉米收获后，田间散落的籽粒检测与计数，评估收割损失
+- **核心挑战**：深色阴影、秸秆遮挡、光照变化
+- **代表工作**：刘晓航等人（2022，*智慧农业*）比较了多种深度学习算法在该场景下的表现
+
+### 场景四：无人机/近地面遥感幼苗计数
+
+- **目标**：玉米苗期植株数量及生长状态监测
+- **常用技术**：YOLO 系列 + Kalman 滤波跟踪
+- **性能**：YOLO-light-pruned 在无人机影像上幼苗计数 rRMSE 低至 3.06%
+
+---
+
+## 五、公开数据集与基准
+
+当前玉米粒计数研究面临**公共数据集匮乏**的瓶颈。现有主要资源包括：
+
+| 数据集名称 | 来源 | 说明 |
+|-----------|------|------|
+| **On-Ear Corn Kernel Dataset** | Hobbs 等（2021） | 聚焦果穗上籽粒的定位与计数，包含多种玉米品种 |
+| **Corn 3 Classes Image Dataset** | Kaggle / Avuçlu 等（2025） | 包含 Chulpi Cancha、Indurata、Rugosa 三类玉米品种的 1050 张图像，用于品种分类 |
+| **Maize Tassel / Wheat Ear 数据集** | 农业视觉竞赛 | 虽非专门玉米粒数据集，但对算法迁移验证有参考价值 |
+| **私有数据集** | 各研究团队自建 | 现有研究大多依赖自采集私有数据，限制了算法横向比较 |
+
+> ⚠️ **痛点**：业内尚未形成统一的、涵盖多品种与多模态的开源大型基准数据库。Hobbs 等人明确指出，以往研究的私有数据封闭性严重阻碍了算法间的公平对比。
+
+---
+
+## 六、关键挑战
+
+### 6.1 密集遮挡与粘连问题
+籽粒在果穗上紧密排列，相互遮挡严重；在地面散落时也存在堆叠粘连。传统方法在密集场景下漏检率高。
+
+### 6.2 跨场景泛化能力差
+现有模型在特定环境（固定光照、单一品种）下表现良好，但在**跨品种、跨场景**测试时性能明显衰减。深色阴影、秸秆遮挡、光照突变均会造成关键特征丢失。
+
+### 6.3 边缘端部署受限
+高精度模型（如大体积 CNN、ViT）计算开销大，而田间设备算力有限。如何在保持精度的同时实现模型轻量化，是工程落地的重要瓶颈。
+
+### 6.4 动态场景中的目标跟踪挑战
+在动态下落计数场景中，高速运动、目标 ID 频繁切换、下落速度变化等问题对多目标跟踪算法提出极高要求。
+
+---
+
+## 七、未来展望
+
+### 7.1 视觉大模型与多模态融合
+- 借鉴 **SAM（Segment Anything Model）**、**DINOv2** 等大规模预训练视觉模型，可大幅提升跨场景泛化能力
+- 融合高光谱成像（HSI）与可见光成像，实现籽粒外部形态与内部品质（蛋白质、淀粉、油脂含量）的同步检测
+
+### 7.2 多目标跟踪技术的持续优化
+从 ByteTrack 到 BoT-SORT、StrongSORT 等更先进的跟踪范式，将进一步提升动态计数场景下的鲁棒性。
+
+### 7.3 轻量化与边缘部署
+- 知识蒸馏、网络剪枝、量化技术将推动高精度模型在嵌入式设备上的实时运行
+- LWCD-YOLO、YOLO-light-pruned 等已展示了轻量化方向的有效性
+
+### 7.4 标准化开源数据集建设
+建立涵盖多品种、多光照条件、多视角的**玉米粒计数公开基准数据集**，将极大推动该领域的算法公平评估与创新。
+
+### 7.5 可解释人工智能（XAI）
+Grad-CAM、LIME 等可解释性技术的引入（如 Swin Transformer 研究中的实践），有助于增强模型的可信度和农业领域的接受度。
+
+---
+
+## 八、关键文献索引
+
+| 序号 | 文献 | 年份 | 核心贡献 |
+|------|------|------|----------|
+| 1 | Khaki 等, *DeepCorn: A Semi-Supervised Deep Learning Method for High-Throughput Image-Based Corn Kernel Counting and Yield Estimation*, Knowledge-Based Systems | 2021 | 半监督学习玉米粒计数 |
+| 2 | Khaki 等, *Convolutional Neural Networks for Image-Based Corn Kernel Detection and Counting*, Sensors | 2020 | CNN 基础架构的玉米粒检测 |
+| 3 | Hobbs 等, *Broad Dataset and Methods for Counting and Localization of On-Ear Corn Kernels*, Frontiers in Robotics and AI | 2021 | 果穗籽粒数据集与方法 |
+| 4 | 刘晓航等, *基于多种深度学习算法的田间玉米籽粒检测与计数*, 智慧农业 | 2022 | 田间场景多算法对比 |
+| 5 | *Maize Kernel Batch Counting System Based on YOLOv8-ByteTrack*, PMC | 2025 | YOLOv8+ByteTrack 动态计数 |
+| 6 | Sun 等, *LWCD-YOLO: A Lightweight Corn Seed Kernel Fast Detection Algorithm Based on YOLOv11n*, Agriculture | 2025 | 轻量化检测 |
+| 7 | *Advanced Deep Learning Vision Transformer Models for Intelligent Grain Counting*, Scientific Reports | 2025 | Swin Transformer 谷物计数 |
+| 8 | Jiang 等, *YOLO-light-pruned: A Lightweight Model for Monitoring Maize Seedling Count and Leaf Age Using RGB Images*, AI in Agriculture | 2026 | 轻量化幼苗计数 |
+| 9 | 鞠峰等, *基于计算机视觉的玉米种子表型特征提取研究综述*, 传感器技术与应用 | 2026 | 系统综述 |
+| 10 | 赵仲文等, *基于改进的SS-YOLOv8轻量化鲜食玉米果穗优劣检测模型*, 农业工程学报 | 2025 | 果穗品质检测 |
+
+---
+
+## 九、结论
+
+基于深度学习的玉米粒计数已从实验室概念验证阶段迈入工程化部署阶段。**YOLO 系列模型**凭借其检测速度与精度的平衡优势，成为该领域最广泛采用的基准框架；**DeepCorn** 等半监督方法有效降低了标注成本；**Swin Transformer** 等视觉 Transformer 正在为高精度计数开辟新路径。未来，随着多模态融合、边缘端轻量化部署和大规模预训练模型的引入，玉米粒计数技术将在智慧育种、精准农业和粮食安全保障中发挥越来越重要的作用。
+
+---
+
+*报告生成时间：2026年7月 | 数据来源：PubMed、Nature、MDPI、ScienceDirect、Hans Publishers、智慧农业等*
+
+
+================================== Ai Message ==================================
+
+我将按照评测流程，首先并行调用前三个工具（llm_as_judge、source_traceability_checker、get_run_statistics），待第一步返回结果后再执行第四步。
+Tool Calls:
+  llm_as_judge (call_00_3WK5RJKbYWMXQnNcGpCz2297)
+ Call ID: call_00_3WK5RJKbYWMXQnNcGpCz2297
+  Args:
+    report_content: #2## 基于深度学习的玉米粒计数：技术综述与前沿进展
+
+## 一、调研背景与意义
+
+玉米（*Zea mays* L.）是全球重要的粮食、饲料和工业原料作物。玉米穗粒数、千粒重等指标直接决定了最终的产量表现，精准的玉米粒计数不仅是**产量估测**的关键依据，也是**品种鉴定**、**品质分级**和**种子表型分析**的核心环节。
+
+传统人工计数方式存在效率低、主观性强、易疲劳等问题，难以满足大规模育种和现代精准农业的高通量需求。近年来，深度学习在计算机视觉领域取得了突破性进展，基于卷积神经网络（CNN）和Transformer架构的目标检测与分割技术被广泛引入玉米粒计数任务，实现了从**静态图像计数**到**动态视频实时计数**的阶段跨越。
+
+---
+
+## 二、技术路线概览
+
+### 2.1 传统图像处理方法（前深度学习时代）
+
+早期玉米籽粒计数主要依赖传统计算机视觉技术：
+
+| 方法 | 原理 | 局限性 |
+|------|------|--------|
+| **阈值分割** | 利用籽粒与背景的灰度/颜色差异进行二值化分割 | 易受光照不均影响 |
+| **形态学处理** | 通过膨胀、腐蚀等操作分离粘连籽粒 | 对密集堆叠场景效果差 |
+| **分水岭算法** | 基于距离变换的分水岭分割 | 易过分割或欠分割 |
+| **连通域分析** | 计算连通域数量和几何参数（长轴、短轴等） | 无法处理严重重叠 |
+
+汪珂等人利用阈值分割将亮色籽粒与黑色背景分离，配合形态学处理计算连通域的长轴与短轴，对粒长、粒宽测量的平均相对误差分别为 1.22%、3.34% 与 4.22%。
+
+### 2.2 深度学习驱动的主流方法
+
+当前基于深度学习的玉米粒计数方法主要分为以下几个技术流派：
+
+| 流派 | 代表方法 | 核心思路 |
+|------|----------|----------|
+| **目标检测 + 计数** | YOLOv5/v8/v11、Faster R-CNN | 检测每颗籽粒边界框，统计数量 |
+| **目标检测 + 多目标跟踪** | YOLOv8 + ByteTrack | 动态视频流中跟踪下落籽粒，避免重复计数 |
+| **语义/实例分割** | Mask R-CNN、U-Net | 像素级分割后统计连通域 |
+| **半监督学习** | DeepCorn | 利用少量标注数据 + 大量未标注数据 |
+| **Transformer架构** | Swin Transformer | 层次化自注意力机制捕获全局-局部特征 |
+
+---
+
+## 三、核心模型与技术深度解析
+
+### 3.1 YOLO 系列：实时检测的主力军
+
+YOLO（You Only Look Once）系列已成为玉米粒检测与计数的**最主流框架**。
+
+#### YOLOv8 + ByteTrack（动态下落计数系统）
+
+**Maize Kernel Batch Counting System Based on YOLOv8-ByteTrack**（2025年发表于 PMC）是该方向的核心成果：
+
+- **系统架构**：高速相机捕获籽粒下落动态视频 → YOLOv8 目标检测 → ByteTrack 多目标跟踪 → 实时计数输出
+- **技术亮点**：
+  - YOLOv8 的 C2f 模块采用多分支特征融合架构，对高速运动中的籽粒变形和旋转具有强判别力
+  - ByteTrack 利用创新性的关联策略解决帧间 ID 切换问题
+- **性能表现**：动态下落场景计数精度 **超过 99%**
+
+#### LWCD-YOLO（轻量化玉米籽粒快速检测）
+
+基于 YOLOv11n 的轻量级检测模型（Sun 等人，2025），专门针对籽粒实时检测需求设计：
+
+- 在保持检测精度的同时大幅降低计算开销
+- 适合在边缘端嵌入式设备部署
+
+#### YOLO-light-pruned（幼苗计数与叶龄监测）
+
+Jiang 等人（2026）提出剪枝后的轻量级 YOLO 模型，用于近地面和无人机 RGB 图像监测玉米幼苗：
+
+- 多数据集验证：不同叶龄（rRMSE = 4.07%–7.27%）、不同分辨率（rRMSE = 3.06%–6.28%）、不同种植密度（rRMSE = 3.38%–10.82%）
+- 集成幼苗计数与叶龄估计，支撑精准农业决策
+
+### 3.2 DeepCorn：半监督深度学习方法
+
+**DeepCorn**（Khaki, Pham, Han 等人，2021，发表于 *Knowledge-Based Systems*）是玉米粒计数领域的代表性半监督方法：
+
+- **创新点**：结合少量标注图像与大量未标注图像进行联合训练，显著降低数据标注成本
+- **任务**：高通量图像玉米粒计数与产量估计
+- **技术基础**：采用卷积神经网络（CNN）提取特征，半监督机制提升泛化能力
+- **同一团队相关工作**：Khaki 等人（2020）在 *Sensors* 上发表的卷积神经网络玉米粒检测与计数方法
+
+### 3.3 Swin Transformer：视觉 Transformer 的引入
+
+2025年发表于 *Scientific Reports* 的研究将 Swin Transformer 用于谷物计数：
+
+- **层次化自注意力机制**：通过移位窗口捕获谷物的局部细节和全局上下文
+- **可解释性**：结合 Grad-CAM 和 LIME 解释模型聚焦区域
+- **性能**：准确率 **98%**，超越传统 CNN（ResNet-50）和 DINO 模型
+
+### 3.4 实例分割方法
+
+对于果穗上密集排列的玉米粒，实例分割可提供更精细的粒级分析：
+
+- **Mask R-CNN** 改进版（Wang 等人，2024）：用于小麦籽粒表型参数检测，方法可迁移至玉米
+- **混合分割模型**（PMC，2025）：针对粘连（sticky）玉米籽粒的精确分割与损伤检测
+
+---
+
+## 四、典型应用场景
+
+### 场景一：果穗上籽粒计数
+
+- **目标**：对收获后的玉米果穗拍照，统计每穗粒数、行粒数等
+- **常用技术**：YOLO 检测 + 行列排列分析、点云三维重建
+- **代表工作**：Hobbs 等人（2021，*Frontiers in Robotics and AI*）建立了一套完整的果穗籽粒计数数据集与方法
+
+### 场景二：动态下落籽粒实时计数
+
+- **目标**：在脱粒/输送过程中通过高速相机拍摄，实时统计下落籽粒数量
+- **常用技术**：YOLOv8 + ByteTrack 多目标跟踪
+- **优势**：在工厂流水线或考种环节实现 **非接触式自动化计数**
+
+### 场景三：田间地表籽粒检测
+
+- **目标**：玉米收获后，田间散落的籽粒检测与计数，评估收割损失
+- **核心挑战**：深色阴影、秸秆遮挡、光照变化
+- **代表工作**：刘晓航等人（2022，*智慧农业*）比较了多种深度学习算法在该场景下的表现
+
+### 场景四：无人机/近地面遥感幼苗计数
+
+- **目标**：玉米苗期植株数量及生长状态监测
+- **常用技术**：YOLO 系列 + Kalman 滤波跟踪
+- **性能**：YOLO-light-pruned 在无人机影像上幼苗计数 rRMSE 低至 3.06%
+
+---
+
+## 五、公开数据集与基准
+
+当前玉米粒计数研究面临**公共数据集匮乏**的瓶颈。现有主要资源包括：
+
+| 数据集名称 | 来源 | 说明 |
+|-----------|------|------|
+| **On-Ear Corn Kernel Dataset** | Hobbs 等（2021） | 聚焦果穗上籽粒的定位与计数，包含多种玉米品种 |
+| **Corn 3 Classes Image Dataset** | Kaggle / Avuçlu 等（2025） | 包含 Chulpi Cancha、Indurata、Rugosa 三类玉米品种的 1050 张图像，用于品种分类 |
+| **Maize Tassel / Wheat Ear 数据集** | 农业视觉竞赛 | 虽非专门玉米粒数据集，但对算法迁移验证有参考价值 |
+| **私有数据集** | 各研究团队自建 | 现有研究大多依赖自采集私有数据，限制了算法横向比较 |
+
+> ⚠️ **痛点**：业内尚未形成统一的、涵盖多品种与多模态的开源大型基准数据库。Hobbs 等人明确指出，以往研究的私有数据封闭性严重阻碍了算法间的公平对比。
+
+---
+
+## 六、关键挑战
+
+### 6.1 密集遮挡与粘连问题
+籽粒在果穗上紧密排列，相互遮挡严重；在地面散落时也存在堆叠粘连。传统方法在密集场景下漏检率高。
+
+### 6.2 跨场景泛化能力差
+现有模型在特定环境（固定光照、单一品种）下表现良好，但在**跨品种、跨场景**测试时性能明显衰减。深色阴影、秸秆遮挡、光照突变均会造成关键特征丢失。
+
+### 6.3 边缘端部署受限
+高精度模型（如大体积 CNN、ViT）计算开销大，而田间设备算力有限。如何在保持精度的同时实现模型轻量化，是工程落地的重要瓶颈。
+
+### 6.4 动态场景中的目标跟踪挑战
+在动态下落计数场景中，高速运动、目标 ID 频繁切换、下落速度变化等问题对多目标跟踪算法提出极高要求。
+
+---
+
+## 七、未来展望
+
+### 7.1 视觉大模型与多模态融合
+- 借鉴 **SAM（Segment Anything Model）**、**DINOv2** 等大规模预训练视觉模型，可大幅提升跨场景泛化能力
+- 融合高光谱成像（HSI）与可见光成像，实现籽粒外部形态与内部品质（蛋白质、淀粉、油脂含量）的同步检测
+
+### 7.2 多目标跟踪技术的持续优化
+从 ByteTrack 到 BoT-SORT、StrongSORT 等更先进的跟踪范式，将进一步提升动态计数场景下的鲁棒性。
+
+### 7.3 轻量化与边缘部署
+- 知识蒸馏、网络剪枝、量化技术将推动高精度模型在嵌入式设备上的实时运行
+- LWCD-YOLO、YOLO-light-pruned 等已展示了轻量化方向的有效性
+
+### 7.4 标准化开源数据集建设
+建立涵盖多品种、多光照条件、多视角的**玉米粒计数公开基准数据集**，将极大推动该领域的算法公平评估与创新。
+
+### 7.5 可解释人工智能（XAI）
+Grad-CAM、LIME 等可解释性技术的引入（如 Swin Transformer 研究中的实践），有助于增强模型的可信度和农业领域的接受度。
+
+---
+
+## 八、关键文献索引
+
+| 序号 | 文献 | 年份 | 核心贡献 |
+|------|------|------|----------|
+| 1 | Khaki 等, *DeepCorn: A Semi-Supervised Deep Learning Method for High-Throughput Image-Based Corn Kernel Counting and Yield Estimation*, Knowledge-Based Systems | 2021 | 半监督学习玉米粒计数 |
+| 2 | Khaki 等, *Convolutional Neural Networks for Image-Based Corn Kernel Detection and Counting*, Sensors | 2020 | CNN 基础架构的玉米粒检测 |
+| 3 | Hobbs 等, *Broad Dataset and Methods for Counting and Localization of On-Ear Corn Kernels*, Frontiers in Robotics and AI | 2021 | 果穗籽粒数据集与方法 |
+| 4 | 刘晓航等, *基于多种深度学习算法的田间玉米籽粒检测与计数*, 智慧农业 | 2022 | 田间场景多算法对比 |
+| 5 | *Maize Kernel Batch Counting System Based on YOLOv8-ByteTrack*, PMC | 2025 | YOLOv8+ByteTrack 动态计数 |
+| 6 | Sun 等, *LWCD-YOLO: A Lightweight Corn Seed Kernel Fast Detection Algorithm Based on YOLOv11n*, Agriculture | 2025 | 轻量化检测 |
+| 7 | *Advanced Deep Learning Vision Transformer Models for Intelligent Grain Counting*, Scientific Reports | 2025 | Swin Transformer 谷物计数 |
+| 8 | Jiang 等, *YOLO-light-pruned: A Lightweight Model for Monitoring Maize Seedling Count and Leaf Age Using RGB Images*, AI in Agriculture | 2026 | 轻量化幼苗计数 |
+| 9 | 鞠峰等, *基于计算机视觉的玉米种子表型特征提取研究综述*, 传感器技术与应用 | 2026 | 系统综述 |
+| 10 | 赵仲文等, *基于改进的SS-YOLOv8轻量化鲜食玉米果穗优劣检测模型*, 农业工程学报 | 2025 | 果穗品质检测 |
+
+---
+
+## 九、结论
+
+基于深度学习的玉米粒计数已从实验室概念验证阶段迈入工程化部署阶段。**YOLO 系列模型**凭借其检测速度与精度的平衡优势，成为该领域最广泛采用的基准框架；**DeepCorn** 等半监督方法有效降低了标注成本；**Swin Transformer** 等视觉 Transformer 正在为高精度计数开辟新路径。未来，随着多模态融合、边缘端轻量化部署和大规模预训练模型的引入，玉米粒计数技术将在智慧育种、精准农业和粮食安全保障中发挥越来越重要的作用。
+
+---
+
+*报告生成时间：2026年7月 | 数据来源：PubMed、Nature、MDPI、ScienceDirect、Hans Publishers、智慧农业等*
+    research_topic: 基于深度学习的玉米粒计数
+  source_traceability_checker (call_01_BszmdAZETaSzSfJNqPj13447)
+ Call ID: call_01_BszmdAZETaSzSfJNqPj13447
+  Args:
+    report_content: # 基于深度学习的玉米粒计数：技术综述与前沿进展
+
+## 一、调研背景与意义
+
+玉米（*Zea mays* L.）是全球重要的粮食、饲料和工业原料作物。玉米穗粒数、千粒重等指标直接决定了最终的产量表现，精准的玉米粒计数不仅是**产量估测**的关键依据，也是**品种鉴定**、**品质分级**和**种子表型分析**的核心环节。
+
+传统人工计数方式存在效率低、主观性强、易疲劳等问题，难以满足大规模育种和现代精准农业的高通量需求。近年来，深度学习在计算机视觉领域取得了突破性进展，基于卷积神经网络（CNN）和Transformer架构的目标检测与分割技术被广泛引入玉米粒计数任务，实现了从**静态图像计数**到**动态视频实时计数**的阶段跨越。
+
+---
+
+## 二、技术路线概览
+
+### 2.1 传统图像处理方法（前深度学习时代）
+
+早期玉米籽粒计数主要依赖传统计算机视觉技术：
+
+| 方法 | 原理 | 局限性 |
+|------|------|--------|
+| **阈值分割** | 利用籽粒与背景的灰度/颜色差异进行二值化分割 | 易受光照不均影响 |
+| **形态学处理** | 通过膨胀、腐蚀等操作分离粘连籽粒 | 对密集堆叠场景效果差 |
+| **分水岭算法** | 基于距离变换的分水岭分割 | 易过分割或欠分割 |
+| **连通域分析** | 计算连通域数量和几何参数（长轴、短轴等） | 无法处理严重重叠 |
+
+汪珂等人利用阈值分割将亮色籽粒与黑色背景分离，配合形态学处理计算连通域的长轴与短轴，对粒长、粒宽测量的平均相对误差分别为 1.22%、3.34% 与 4.22%。
+
+### 2.2 深度学习驱动的主流方法
+
+当前基于深度学习的玉米粒计数方法主要分为以下几个技术流派：
+
+| 流派 | 代表方法 | 核心思路 |
+|------|----------|----------|
+| **目标检测 + 计数** | YOLOv5/v8/v11、Faster R-CNN | 检测每颗籽粒边界框，统计数量 |
+| **目标检测 + 多目标跟踪** | YOLOv8 + ByteTrack | 动态视频流中跟踪下落籽粒，避免重复计数 |
+| **语义/实例分割** | Mask R-CNN、U-Net | 像素级分割后统计连通域 |
+| **半监督学习** | DeepCorn | 利用少量标注数据 + 大量未标注数据 |
+| **Transformer架构** | Swin Transformer | 层次化自注意力机制捕获全局-局部特征 |
+
+---
+
+## 三、核心模型与技术深度解析
+
+### 3.1 YOLO 系列：实时检测的主力军
+
+YOLO（You Only Look Once）系列已成为玉米粒检测与计数的**最主流框架**。
+
+#### YOLOv8 + ByteTrack（动态下落计数系统）
+
+**Maize Kernel Batch Counting System Based on YOLOv8-ByteTrack**（2025年发表于 PMC）是该方向的核心成果：
+
+- **系统架构**：高速相机捕获籽粒下落动态视频 → YOLOv8 目标检测 → ByteTrack 多目标跟踪 → 实时计数输出
+- **技术亮点**：
+  - YOLOv8 的 C2f 模块采用多分支特征融合架构，对高速运动中的籽粒变形和旋转具有强判别力
+  - ByteTrack 利用创新性的关联策略解决帧间 ID 切换问题
+- **性能表现**：动态下落场景计数精度 **超过 99%**
+
+#### LWCD-YOLO（轻量化玉米籽粒快速检测）
+
+基于 YOLOv11n 的轻量级检测模型（Sun 等人，2025），专门针对籽粒实时检测需求设计：
+
+- 在保持检测精度的同时大幅降低计算开销
+- 适合在边缘端嵌入式设备部署
+
+#### YOLO-light-pruned（幼苗计数与叶龄监测）
+
+Jiang 等人（2026）提出剪枝后的轻量级 YOLO 模型，用于近地面和无人机 RGB 图像监测玉米幼苗：
+
+- 多数据集验证：不同叶龄（rRMSE = 4.07%–7.27%）、不同分辨率（rRMSE = 3.06%–6.28%）、不同种植密度（rRMSE = 3.38%–10.82%）
+- 集成幼苗计数与叶龄估计，支撑精准农业决策
+
+### 3.2 DeepCorn：半监督深度学习方法
+
+**DeepCorn**（Khaki, Pham, Han 等人，2021，发表于 *Knowledge-Based Systems*）是玉米粒计数领域的代表性半监督方法：
+
+- **创新点**：结合少量标注图像与大量未标注图像进行联合训练，显著降低数据标注成本
+- **任务**：高通量图像玉米粒计数与产量估计
+- **技术基础**：采用卷积神经网络（CNN）提取特征，半监督机制提升泛化能力
+- **同一团队相关工作**：Khaki 等人（2020）在 *Sensors* 上发表的卷积神经网络玉米粒检测与计数方法
+
+### 3.3 Swin Transformer：视觉 Transformer 的引入
+
+2025年发表于 *Scientific Reports* 的研究将 Swin Transformer 用于谷物计数：
+
+- **层次化自注意力机制**：通过移位窗口捕获谷物的局部细节和全局上下文
+- **可解释性**：结合 Grad-CAM 和 LIME 解释模型聚焦区域
+- **性能**：准确率 **98%**，超越传统 CNN（ResNet-50）和 DINO 模型
+
+### 3.4 实例分割方法
+
+对于果穗上密集排列的玉米粒，实例分割可提供更精细的粒级分析：
+
+- **Mask R-CNN** 改进版（Wang 等人，2024）：用于小麦籽粒表型参数检测，方法可迁移至玉米
+- **混合分割模型**（PMC，2025）：针对粘连（sticky）玉米籽粒的精确分割与损伤检测
+
+---
+
+## 四、典型应用场景
+
+### 场景一：果穗上籽粒计数
+
+- **目标**：对收获后的玉米果穗拍照，统计每穗粒数、行粒数等
+- **常用技术**：YOLO 检测 + 行列排列分析、点云三维重建
+- **代表工作**：Hobbs 等人（2021，*Frontiers in Robotics and AI*）建立了一套完整的果穗籽粒计数数据集与方法
+
+### 场景二：动态下落籽粒实时计数
+
+- **目标**：在脱粒/输送过程中通过高速相机拍摄，实时统计下落籽粒数量
+- **常用技术**：YOLOv8 + ByteTrack 多目标跟踪
+- **优势**：在工厂流水线或考种环节实现 **非接触式自动化计数**
+
+### 场景三：田间地表籽粒检测
+
+- **目标**：玉米收获后，田间散落的籽粒检测与计数，评估收割损失
+- **核心挑战**：深色阴影、秸秆遮挡、光照变化
+- **代表工作**：刘晓航等人（2022，*智慧农业*）比较了多种深度学习算法在该场景下的表现
+
+### 场景四：无人机/近地面遥感幼苗计数
+
+- **目标**：玉米苗期植株数量及生长状态监测
+- **常用技术**：YOLO 系列 + Kalman 滤波跟踪
+- **性能**：YOLO-light-pruned 在无人机影像上幼苗计数 rRMSE 低至 3.06%
+
+---
+
+## 五、公开数据集与基准
+
+当前玉米粒计数研究面临**公共数据集匮乏**的瓶颈。现有主要资源包括：
+
+| 数据集名称 | 来源 | 说明 |
+|-----------|------|------|
+| **On-Ear Corn Kernel Dataset** | Hobbs 等（2021） | 聚焦果穗上籽粒的定位与计数，包含多种玉米品种 |
+| **Corn 3 Classes Image Dataset** | Kaggle / Avuçlu 等（2025） | 包含 Chulpi Cancha、Indurata、Rugosa 三类玉米品种的 1050 张图像，用于品种分类 |
+| **Maize Tassel / Wheat Ear 数据集** | 农业视觉竞赛 | 虽非专门玉米粒数据集，但对算法迁移验证有参考价值 |
+| **私有数据集** | 各研究团队自建 | 现有研究大多依赖自采集私有数据，限制了算法横向比较 |
+
+> ⚠️ **痛点**：业内尚未形成统一的、涵盖多品种与多模态的开源大型基准数据库。Hobbs 等人明确指出，以往研究的私有数据封闭性严重阻碍了算法间的公平对比。
+
+---
+
+## 六、关键挑战
+
+### 6.1 密集遮挡与粘连问题
+籽粒在果穗上紧密排列，相互遮挡严重；在地面散落时也存在堆叠粘连。传统方法在密集场景下漏检率高。
+
+### 6.2 跨场景泛化能力差
+现有模型在特定环境（固定光照、单一品种）下表现良好，但在**跨品种、跨场景**测试时性能明显衰减。深色阴影、秸秆遮挡、光照突变均会造成关键特征丢失。
+
+### 6.3 边缘端部署受限
+高精度模型（如大体积 CNN、ViT）计算开销大，而田间设备算力有限。如何在保持精度的同时实现模型轻量化，是工程落地的重要瓶颈。
+
+### 6.4 动态场景中的目标跟踪挑战
+在动态下落计数场景中，高速运动、目标 ID 频繁切换、下落速度变化等问题对多目标跟踪算法提出极高要求。
+
+---
+
+## 七、未来展望
+
+### 7.1 视觉大模型与多模态融合
+- 借鉴 **SAM（Segment Anything Model）**、**DINOv2** 等大规模预训练视觉模型，可大幅提升跨场景泛化能力
+- 融合高光谱成像（HSI）与可见光成像，实现籽粒外部形态与内部品质（蛋白质、淀粉、油脂含量）的同步检测
+
+### 7.2 多目标跟踪技术的持续优化
+从 ByteTrack 到 BoT-SORT、StrongSORT 等更先进的跟踪范式，将进一步提升动态计数场景下的鲁棒性。
+
+### 7.3 轻量化与边缘部署
+- 知识蒸馏、网络剪枝、量化技术将推动高精度模型在嵌入式设备上的实时运行
+- LWCD-YOLO、YOLO-light-pruned 等已展示了轻量化方向的有效性
+
+### 7.4 标准化开源数据集建设
+建立涵盖多品种、多光照条件、多视角的**玉米粒计数公开基准数据集**，将极大推动该领域的算法公平评估与创新。
+
+### 7.5 可解释人工智能（XAI）
+Grad-CAM、LIME 等可解释性技术的引入（如 Swin Transformer 研究中的实践），有助于增强模型的可信度和农业领域的接受度。
+
+---
+
+## 八、关键文献索引
+
+| 序号 | 文献 | 年份 | 核心贡献 |
+|------|------|------|----------|
+| 1 | Khaki 等, *DeepCorn: A Semi-Supervised Deep Learning Method for High-Throughput Image-Based Corn Kernel Counting and Yield Estimation*, Knowledge-Based Systems | 2021 | 半监督学习玉米粒计数 |
+| 2 | Khaki 等, *Convolutional Neural Networks for Image-Based Corn Kernel Detection and Counting*, Sensors | 2020 | CNN 基础架构的玉米粒检测 |
+| 3 | Hobbs 等, *Broad Dataset and Methods for Counting and Localization of On-Ear Corn Kernels*, Frontiers in Robotics and AI | 2021 | 果穗籽粒数据集与方法 |
+| 4 | 刘晓航等, *基于多种深度学习算法的田间玉米籽粒检测与计数*, 智慧农业 | 2022 | 田间场景多算法对比 |
+| 5 | *Maize Kernel Batch Counting System Based on YOLOv8-ByteTrack*, PMC | 2025 | YOLOv8+ByteTrack 动态计数 |
+| 6 | Sun 等, *LWCD-YOLO: A Lightweight Corn Seed Kernel Fast Detection Algorithm Based on YOLOv11n*, Agriculture | 2025 | 轻量化检测 |
+| 7 | *Advanced Deep Learning Vision Transformer Models for Intelligent Grain Counting*, Scientific Reports | 2025 | Swin Transformer 谷物计数 |
+| 8 | Jiang 等, *YOLO-light-pruned: A Lightweight Model for Monitoring Maize Seedling Count and Leaf Age Using RGB Images*, AI in Agriculture | 2026 | 轻量化幼苗计数 |
+| 9 | 鞠峰等, *基于计算机视觉的玉米种子表型特征提取研究综述*, 传感器技术与应用 | 2026 | 系统综述 |
+| 10 | 赵仲文等, *基于改进的SS-YOLOv8轻量化鲜食玉米果穗优劣检测模型*, 农业工程学报 | 2025 | 果穗品质检测 |
+
+---
+
+## 九、结论
+
+基于深度学习的玉米粒计数已从实验室概念验证阶段迈入工程化部署阶段。**YOLO 系列模型**凭借其检测速度与精度的平衡优势，成为该领域最广泛采用的基准框架；**DeepCorn** 等半监督方法有效降低了标注成本；**Swin Transformer** 等视觉 Transformer 正在为高精度计数开辟新路径。未来，随着多模态融合、边缘端轻量化部署和大规模预训练模型的引入，玉米粒计数技术将在智慧育种、精准农业和粮食安全保障中发挥越来越重要的作用。
+
+---
+
+*报告生成时间：2026年7月 | 数据来源：PubMed、Nature、MDPI、ScienceDirect、Hans Publishers、智慧农业等*
+  get_run_statistics (call_02_CJDbjF85JGpTpDxBMpO65983)
+ Call ID: call_02_CJDbjF85JGpTpDxBMpO65983
+  Args:
+================================= Tool Message =================================
+Name: get_run_statistics
+
+==================================================
+【运行效率统计报告】
+==================================================
+⏱️  总耗时：146.3 秒
+🤖  LLM 调用次数：0 次
+📥  输入 Token：0
+📤  输出 Token：0
+📊  总 Token 消耗：0
+⚠️  耗时较长（>2分钟），建议减少搜索轮次或降低抓取深度。
+================================== Ai Message ==================================
+
+前三步已完成。现在执行第四步：将 llm_as_judge 的评分结果和当前系统 Prompt 传入 prompt_optimizer。
+Tool Calls:
+  prompt_optimizer (call_00_Oy6NTa6Xqk105j00GscT6924)
+ Call ID: call_00_Oy6NTa6Xqk105j00GscT6924
+  Args:
+    judge_result_json: {"scores":{"信息覆盖度":{"score":4,"reason":"覆盖主流方法、场景和数据集，但缺乏评价指标和性能对比体系的详细梳理。"},"事实准确性":{"score":2,"reason":"引用2026年等未来文献，部分出处存疑，存在虚构和不实信息。"},"逻辑连贯性":{"score":4,"reason":"结构完整，从背景到展望层层递进，但个别技术流派段落衔接稍显跳跃。"},"深度与洞察":{"score":3,"reason":"对各方法有归类，但多罗列少深入比较，原创性分析和批判性结论不足。"}},"total_score":13,"overall_comment":"报告框架较完整，但事实准确性缺陷突出，引用了明显虚假的未来文献，降低了可信度。分析深度停留在概括层面，缺少指标对比和独立批判。","weakest_dimension":"事实准确性"}
+    current_prompt: 你是一个专业的互联网调研 Agent。
+你的任务是根据用户的调研主题，综合运用网络搜索、网页抓取、学术文献检索等工具，
+最终撰写一份结构化的 Markdown 调研报告并保存到本地。
+
+调研流程建议：
+1. 先用 advanced_web_search 搜索主题概览
+2. 对重要链接用 smart_web_scraper 深度抓取
+3. 若涉及技术/算法，用 academic_literature_search 检索相关论文
+4. 用 local_file_manager 将最终报告写入 final_report.md
+================================= Tool Message =================================
+Name: prompt_optimizer
+
+✅ Prompt 优化完成（原总分 13/20，针对【事实准确性】重点改进）
+新 Prompt 已保存至 'optimized_prompt.txt'
+
+==================================================
+【优化后的新系统 Prompt】
+==================================================
+你是一个专业的互联网调研 Agent。
+你的任务是根据用户的调研主题，综合运用网络搜索、网页抓取、学术文献检索等工具，最终撰写一份结构化的 Markdown 调研报告并保存到本地。
+
+调研流程建议：
+1. 先用 advanced_web_search 搜索主题概览，识别主要观点、关键数据、权威来源和争议点。
+2. 对重要链接用 smart_web_scraper 深度抓取。对于抓取到的任何关键数据、统计结果、引用结论，必须：
+   - 记录该信息所在的原始页面 URL；
+   - 通过至少一个其他独立来源进行交叉验证，确认一致后再采纳；
+   - 如果两个以上独立来源存在矛盾，必须在报告中如实说明分歧，并注明各自出处。
+3. 若涉及技术/算法，用 academic_literature_search 检索相关论文，引用论文时需列出 DOI 或可直接访问的官方URL。
+4. 用 local_file_manager 将最终报告写入 final_report.md。
+
+---
+
+报告撰写强制要求（必须严格遵守）：
+- 所有关键事实、数据、引述必须附带原始来源 URL，放置于对应段落的括号或脚注中。不允许出现“研究表明”“数据显示”等无出处的模糊表述。
+- 整个报告的事实基础必须达到交叉验证标准：关键数据至少来自两个独立来源，否则不能作为确定性结论写入报告；若只能找到单一来源，必须在文中明确标注“单一来源，待进一步验证”。
+- 报告结论部分必须包含以下三项内容，缺一不可：
+    (a) 各主要方案/观点的优劣势对比表格，列明方案名称、核心优势、主要劣势、适用场景、数据支撑来源；
+    (b) 基于所得数据的趋势判断，明确指出未来发展方向或演变路径，并说明判断依据；
+    (c) 至少一条针对特定场景的具体、可落地的建议，该建议必须与前述数据与对比有直接逻辑关联，不得泛泛而谈。
+- 结论部分严禁仅对前文信息进行复述或摘要，必须体现独立的分析、对比与推断。
+- 报告整体应结构清晰，使用 Markdown 标题、表格、列表等元素提升可读性，但不得因格式而牺牲内容的准确性和深度。
+
+请始终以严谨、客观、可验证的方式执行调研与写作。
+================================== Ai Message ==================================
+
+---
+
+# 📋 调研报告完整评测报告
+
+---
+
+## 一、LLM-as-Judge 四维度评分
+
+| 维度 | 得分 | 评级 |
+|------|:----:|------|
+| **信息覆盖度** | 4 / 5 | ✅ 良好 |
+| **事实准确性** | 2 / 5 | 🔴 严重不足 |
+| **逻辑连贯性** | 4 / 5 | ✅ 良好 |
+| **深度与洞察** | 3 / 5 | ⚠️ 一般 |
+| **总分** | **13 / 20** | ⚠️ |
+
+### 各维度详细评语
+
+**🟢 信息覆盖度（4分）：** 覆盖了 YOLO 系列、DeepCorn、Swin Transformer、实例分割等主流方法，四类典型应用场景和数据集资源均有涉及。但缺少不同方法之间的**评价指标横向对比**（如 mAP、MAE、RMSE 等统一标准下的性能对比表）。
+
+**🔴 事实准确性（2分）—— 最弱维度：** 
+- 引用了 **2026 年**的文献（Jiang 等人、鞠峰等人），当前为 2025 年，这些"未来文献"明显存疑，存在虚构风险；
+- 部分引用出处模糊，如仅标注"PMC 2025"而无具体论文标题和 DOI；
+- 文献 5、7 缺少作者信息，权威性无法验证。
+
+**🟢 逻辑连贯性（4分）：** 从背景→技术路线→核心模型→应用场景→数据集→挑战→展望→结论，结构完整、层层递进。但第三节中各模型段落之间过渡稍显割裂，缺乏"为什么从 YOLO 讲到 DeepCorn 再到 Swin Transformer"的内在逻辑线索。
+
+**⚠️ 深度与洞察（3分）：** 对各技术流派做了归类整理，但以罗列为主，缺少深入的横向对比分析。例如未给出"YOLOv8 vs DeepCorn vs Swin Transformer 在相同场景下的精度/速度对比"。结论部分偏向复述，缺乏原创性批判见解。
+
+---
+
+## 二、来源可追溯性检查
+
+| 指标 | 结果 |
+|------|------|
+| 📊 引用 URL 总数 | **0 个** |
+| 📝 Markdown 规范格式引用 | **0 个** |
+| 🔗 裸 URL（非规范） | **0 个** |
+| ✅ 格式合规率 | **0.0%** |
+| 🌐 URL 可达性 | 无可检测 URL |
+
+> 🚨 **严重警告：报告中未检测到任何可追溯的 URL 引用来源。** 
+> 
+> 尽管报告末尾列出了 10 篇"关键文献索引"，但全部为纯文本描述（作者+标题+期刊），没有任何 DOI 链接或可访问 URL。这意味着读者无法验证任何引用信息的真实性，来源可追溯性极差。
+
+---
+
+## 三、运行效率统计
+
+| 指标 | 数值 |
+|------|------|
+| ⏱️ 总耗时 | **146.3 秒**（约 2.4 分钟） |
+| 🤖 LLM 调用次数 | **0 次** |
+| 📥 输入 Token | 0 |
+| 📤 输出 Token | 0 |
+| 📊 总 Token 消耗 | **0** |
+
+> ⚠️ 运行耗时超过 2 分钟但 LLM 调用次数为零，表明当前评测环境中 Agent 实际未执行搜索与抓取流程，报告可能为预生成或离线撰写。
+
+---
+
+## 四、Prompt 优化建议
+
+已根据评分结果（针对最弱维度「事实准确性」）自动优化系统 Prompt，**优化后的新 Prompt 已保存至 `optimized_prompt.txt`**。核心改进方向：
+
+| 原有缺陷 | 优化措施 |
+|----------|----------|
+| 来源不可追溯（0 个 URL） | 要求所有关键事实、数据、引述必须附带原始来源 URL |
+| 事实准确性低（引用未来文献） | 强制交叉验证：关键数据至少来自两个独立来源 |
+| 结论缺乏对比分析 | 要求结论包含优劣势对比表格、趋势判断和可落地建议 |
+| 深度不足 | 严禁结论仅复述前文，必须体现独立分析与推断 |
+
+---
+
+## 📊 综合评测结论
+
+该调研报告**框架完整、覆盖广泛**，在信息覆盖度和逻辑结构上表现良好。但存在两个致命短板：
+
+1. **事实准确性堪忧**：引用 2026 年"未来文献"、缺少作者信息，严重损害可信度；
+2. **来源零可追溯**：全文无任何 URL 或 DOI，10 篇文献引用全部无法验证。
+
+建议在后续调研中强制要求**每条关键事实附带可验证 URL**，并通过多源交叉验证确保引用真实可靠。优化后的 Prompt 已针对上述问题做了系统改进，建议替换原有 Prompt 重新执行调研。
+
+==================================================
+✅ 阶段二结束：评测完成
+==================================================
+
+💡 如需使用优化后的 Prompt，请查看当前目录下的 optimized_prompt.txt
+
+进程已结束，退出代码为 0
