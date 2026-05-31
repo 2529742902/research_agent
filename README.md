@@ -1,4 +1,3 @@
-# research_agent
 # Research Agent 自动化互联网调研双智能体系统
 
 本项目是一个基于 **LangGraph React Agent** 架构搭建的自动化互联网调研与评测闭环系统。系统通过双智能体（Research Agent & Critic Agent）协同工作：首先由 Research Agent 全网检索并深度抓取核心信息，自动交叉验证后输出严谨的 Markdown 调研报告；随后由 Critic Agent 担任评审专家对报告进行多维度打分和合规性审查，并基于诊断结果**自动定向优化系统 Prompt**，实现智能体策略的自我迭代。
